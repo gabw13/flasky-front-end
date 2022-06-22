@@ -1,7 +1,7 @@
 import "./Driver.css";
 import PropTypes from "prop-types";
 // one to one mapping between functions and components; needs to return jsx
-import { useState } from "react";
+// import { useState } from "react";
 
 const Driver = (props) => {
   // const [handsome, setHandsome] = useState(props.handsome);
@@ -44,6 +44,7 @@ const Driver = (props) => {
         <li>Team: {props.team}</li>
         <li>Country: {props.country}</li>
         <li>Handsome: {props.handsome.toString()}</li>
+        <li>Cars: {props.cars}</li>
         {/* // using variable from line 7 because if you use props.handsome here it will always be whats in the array */}
         <button onClick={flipMyHandsome}>change handsomeness</button>
         <button onClick={deleteMe}>delete</button>
@@ -58,6 +59,7 @@ const Driver = (props) => {
 Driver.propTypes = {
   name: PropTypes.string.isRequired,
   team: PropTypes.string.isRequired,
+  cars: PropTypes.array.isRequired,
   country: PropTypes.string.isRequired,
   handsome: PropTypes.bool.isRequired,
   id: PropTypes.number.isRequired,
